@@ -32,16 +32,16 @@ export default function App() {
     setSelectedMovie(movie);
   };
   
-  const handleSearchSubmit = async (query: string) => {
+  const handleSearchSubmit = (query: string) => {
     setSearchQuery(query);
     setPage(1);
   };
 
   useEffect(() => {
-  if (data?.results.length === 0) {
+  if (isSuccess && data?.results.length === 0) {
     toast.error("No movies found for your request.");
   }
-}, [data]);
+}, [data, isSuccess]);
   
   return (
     <>
