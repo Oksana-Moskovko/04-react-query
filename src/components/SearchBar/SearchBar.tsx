@@ -1,30 +1,20 @@
 import css from "../SearchBar/SearchBar.module.css";
 import toast from "react-hot-toast";
-// import { fetchMovies } from "../../services/movieService";
 
 interface SearchBarProps {
         onSubmit: (value: string) => void;
     }
 
 export default function SearchBar({onSubmit}: SearchBarProps) {
-    // const [query, setQuery] = useSate("");
-
-    // const handleInputChange = (e) => {
-    //     setQuery(e.target.value);
-    // };
+    
     const handleSubmit = (formData: FormData) => {
         const query = formData.get("query") as string;
         if (!query) {
             toast.error("Please enter your search query")
             return 
         }
-        // if (!query) {
-        //     return console.log("No movies found for your request.")
-        // }
         onSubmit(query)
     };
-
-    
 
   return (
       <>

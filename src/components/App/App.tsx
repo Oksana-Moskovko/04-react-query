@@ -14,7 +14,6 @@ import { fetchMovies } from "../../services/movieService";
 
 
 export default function App() {
-  // const [movies, setMovies] = useState<Movie[]>([])
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [page, setPage] = useState(1);
